@@ -1,0 +1,23 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2024-01-05T12:03:11Z"
+deprecatedLastTimestamp: "2024-01-05T12:03:11Z"
+deprecatedSource:
+  component: deployment-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2024-01-05T12:03:11Z"
+  name: katafygio.17a771e0358a160c
+  namespace: default
+  uid: cc5215d9-b896-492e-853d-04e54f27008b
+note: Scaled down replica set katafygio-7d7fcd567 to 0 from 1
+reason: ScalingReplicaSet
+regarding:
+  apiVersion: apps/v1
+  kind: Deployment
+  name: katafygio
+  namespace: default
+  resourceVersion: "1254194"
+  uid: d71f94ac-73a0-4630-a57c-701d904e3f73
+type: Normal

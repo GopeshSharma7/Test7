@@ -1,0 +1,23 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2024-01-05T12:03:11Z"
+deprecatedLastTimestamp: "2024-01-05T12:03:11Z"
+deprecatedSource:
+  component: replicaset-controller
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2024-01-05T12:03:11Z"
+  name: katafygio-7d7fcd567.17a771e03618057f
+  namespace: default
+  uid: 03bacd7f-f63f-4d2c-be2b-7638c4bd4348
+note: 'Deleted pod: katafygio-7d7fcd567-9sblx'
+reason: SuccessfulDelete
+regarding:
+  apiVersion: apps/v1
+  kind: ReplicaSet
+  name: katafygio-7d7fcd567
+  namespace: default
+  resourceVersion: "1254195"
+  uid: fdd570a5-c560-4b24-a645-cb85e779b2a6
+type: Normal
