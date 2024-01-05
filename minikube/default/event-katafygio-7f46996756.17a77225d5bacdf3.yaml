@@ -1,23 +1,25 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2024-01-05T12:08:10Z"
-deprecatedLastTimestamp: "2024-01-05T12:08:10Z"
-deprecatedSource:
-  component: replicaset-controller
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2024-01-05T12:08:10Z"
-  name: katafygio-7f46996756.17a77225d5bacdf3
-  namespace: default
-  uid: 4fc613d6-8869-4238-8bfa-3c2846acbb01
-note: 'Created pod: katafygio-7f46996756-ndrgc'
-reason: SuccessfulCreate
-regarding:
+firstTimestamp: "2024-01-05T12:08:10Z"
+involvedObject:
   apiVersion: apps/v1
   kind: ReplicaSet
   name: katafygio-7f46996756
   namespace: default
   resourceVersion: "1254519"
   uid: b24826f9-cc5a-454e-9d3b-5ccbc5af68da
+kind: Event
+lastTimestamp: "2024-01-05T12:08:10Z"
+message: 'Created pod: katafygio-7f46996756-ndrgc'
+metadata:
+  creationTimestamp: "2024-01-05T12:08:10Z"
+  name: katafygio-7f46996756.17a77225d5bacdf3
+  namespace: default
+  uid: 4fc613d6-8869-4238-8bfa-3c2846acbb01
+reason: SuccessfulCreate
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: replicaset-controller
 type: Normal

@@ -1,23 +1,25 @@
-apiVersion: events.k8s.io/v1
-deprecatedCount: 1
-deprecatedFirstTimestamp: "2024-01-05T12:08:10Z"
-deprecatedLastTimestamp: "2024-01-05T12:08:10Z"
-deprecatedSource:
-  component: default-scheduler
+apiVersion: v1
+count: 1
 eventTime: null
-kind: Event
-metadata:
-  creationTimestamp: "2024-01-05T12:08:10Z"
-  name: katafygio-7f46996756-ndrgc.17a77225d641c65c
-  namespace: default
-  uid: 54e77f5f-536d-4d1d-ac78-923db8c2a76d
-note: Successfully assigned default/katafygio-7f46996756-ndrgc to minikube
-reason: Scheduled
-regarding:
+firstTimestamp: "2024-01-05T12:08:10Z"
+involvedObject:
   apiVersion: v1
   kind: Pod
   name: katafygio-7f46996756-ndrgc
   namespace: default
   resourceVersion: "1254522"
   uid: 97a54d9c-26a7-462c-9561-f70b4abfbab7
+kind: Event
+lastTimestamp: "2024-01-05T12:08:10Z"
+message: Successfully assigned default/katafygio-7f46996756-ndrgc to minikube
+metadata:
+  creationTimestamp: "2024-01-05T12:08:10Z"
+  name: katafygio-7f46996756-ndrgc.17a77225d641c65c
+  namespace: default
+  uid: 54e77f5f-536d-4d1d-ac78-923db8c2a76d
+reason: Scheduled
+reportingComponent: ""
+reportingInstance: ""
+source:
+  component: default-scheduler
 type: Normal
