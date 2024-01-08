@@ -1,0 +1,106 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2023-11-07T08:38:19Z"
+  labels:
+    deleteLock: enabled
+  name: niginx
+  namespace: default
+  uid: dc7bc6c4-ab93-41e3-8e16-6c57c985f904
+spec:
+  containers:
+  - image: nginx
+    imagePullPolicy: Always
+    name: niginx
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-tjflm
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: minikube
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - name: kube-api-access-tjflm
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2023-11-07T08:38:19Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2024-01-05T07:57:04Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2024-01-05T07:57:04Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2023-11-07T08:38:19Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://66fa4d5934ae0b0b2c3ace2c6f01c57fd14dc2ef8c9dbff4ef540159321ba744
+    image: nginx:latest
+    imageID: docker-pullable://nginx@sha256:2bdc49f2f8ae8d8dc50ed00f2ee56d00385c6f8bc8a8b320d0a294d9e3b49026
+    lastState:
+      terminated:
+        containerID: docker://ce4e54b9d7201771119e3f53fd2e925e0440005f6a47dd72f37dc19ec21c7509
+        exitCode: 0
+        finishedAt: "2024-01-05T07:56:45Z"
+        reason: Completed
+        startedAt: "2024-01-04T18:13:51Z"
+    name: niginx
+    ready: true
+    restartCount: 6
+    started: true
+    state:
+      running:
+        startedAt: "2024-01-05T07:57:04Z"
+  hostIP: 192.168.49.2
+  phase: Running
+  podIP: 10.244.0.154
+  podIPs:
+  - ip: 10.244.0.154
+  qosClass: BestEffort
+  startTime: "2023-11-07T08:38:19Z"
