@@ -1,0 +1,25 @@
+apiVersion: events.k8s.io/v1
+deprecatedCount: 1
+deprecatedFirstTimestamp: "2024-01-08T04:55:02Z"
+deprecatedLastTimestamp: "2024-01-08T04:55:02Z"
+deprecatedSource:
+  component: kubelet
+  host: minikube
+eventTime: null
+kind: Event
+metadata:
+  creationTimestamp: "2024-01-08T04:55:02Z"
+  name: katafygio-7f46996756-ndrgc.17a8464097ad222e
+  namespace: default
+  uid: 0a37d076-8303-4c50-8b9b-9f1c2215028f
+note: Stopping container katafygio
+reason: Killing
+regarding:
+  apiVersion: v1
+  fieldPath: spec.containers{katafygio}
+  kind: Pod
+  name: katafygio-7f46996756-ndrgc
+  namespace: default
+  resourceVersion: "1254525"
+  uid: 97a54d9c-26a7-462c-9561-f70b4abfbab7
+type: Normal
